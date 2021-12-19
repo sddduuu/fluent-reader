@@ -49,7 +49,8 @@ function setProxy(address = null) {
         store.set(PAC_STORE_KEY, address)
     }
     if (getProxyStatus()) {
-        let rules = { pacScript: address }
+        //let rules = { pacScript: address }
+        let rules = { proxyRules: address }
         session.defaultSession.setProxy(rules)
         session.fromPartition("sandbox").setProxy(rules)
     }
